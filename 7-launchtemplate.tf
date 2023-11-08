@@ -3,9 +3,9 @@ resource "aws_launch_template" "app1_LT" {
   image_id      = "ami-06ed60ed1369448bd"  
   instance_type = "t2.micro"
 
-  key_name = "form"
+  key_name = "MyLinuxBox"
 
-  vpc_security_group_ids = [aws_security_group.app1_sg01_servers.id]
+  vpc_security_group_ids = [aws_security_group.app1-sg01-servers.id]
 
   user_data = base64encode(<<-EOF
     #!/bin/bash
@@ -37,8 +37,8 @@ resource "aws_launch_template" "app1_LT" {
     </head>
     <body>
     <div>
-    <h1>AWS Instance Details</h1>
-    <h1>Samurai Katana</h1>
+    <h1>Malgus Clan</h1>
+    <h1>Chains Broken in Ireland</h1>
     <p><b>Instance Name:</b> $(hostname -f) </p>
     <p><b>Instance Private Ip Address: </b> $local_ipv4</p>
     <p><b>Availability Zone: </b> $az</p>
