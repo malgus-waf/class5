@@ -8,7 +8,7 @@ resource "aws_lb" "app1_alb" {
     aws_subnet.public-eu-west-1b.id,
     aws_subnet.public-eu-west-1c.id
   ]
-  enable_deletion_protection = true
+  enable_deletion_protection = false
 
   tags = {
     Name    = "App1LoadBalancer"
