@@ -7,5 +7,6 @@ resource "aws_vpc" "app1" {
     Service = "hashicorp"
     Owner = "terrando"
     Planet = "zulu"
+    live = "True"
   }
 }
