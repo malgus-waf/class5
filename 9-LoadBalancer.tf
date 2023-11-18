@@ -24,11 +24,18 @@ resource "aws_lb_listener" "http" {
   port              = 80
   protocol          = "HTTP"
 
+default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.app1_tg.arn
+  }
+}
 data "aws_acm_certificate" "cert" {
   domain   = "balekxnf;lknfglknd.com"
   statuses = ["ISSUED"]
   most_recent = true
 }
+
+
 
 
 resource "aws_lb_listener" "https" {
