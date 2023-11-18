@@ -51,3 +51,8 @@ resource "aws_lb_listener" "https" {
     target_group_arn = aws_lb_target_group.app1_tg.arn
   }
 }
+
+output "lb_dns_name" {
+  value       = aws_lb.app1_alb.dns_name
+  description = "The DNS name of the App1 Load Balancer."
+}
