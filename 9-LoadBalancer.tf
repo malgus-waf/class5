@@ -31,7 +31,7 @@ resource "aws_lb_listener" "http" {
 }
 
 data "aws_acm_certificate" "cert" {
-  domain   = "balericaclad;knfdas.com"
+  domain   = "balerica-aisecops.com"
   statuses = ["ISSUED"]
   most_recent = true
 }
